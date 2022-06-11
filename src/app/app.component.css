@@ -1,8 +1,8 @@
 p, div, h1, h2, h3, h4, h5, td, th {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
 h5 {
-    font-size: 18px;
+    font-size: 16px;
 }
 p, div, h6, td, th {
     font-size: 14.5px;
