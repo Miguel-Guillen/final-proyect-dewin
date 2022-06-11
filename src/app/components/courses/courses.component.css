@@ -1,0 +1,21 @@
+p, div, h1, h2, h3, h4, h5, td, th {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+h5 {
+    font-size: 18px;
+}
+p, div, h6, td, th {
+    font-size: 14.5px;
+}
+.course-container {
+    min-height: 83vh;
+    height: max-content;
+    padding: 60px;
+}
+
+.bg-header {
+    background-color: #102d43;
+}
+.text-lightly {
+    color: #ccc
+}

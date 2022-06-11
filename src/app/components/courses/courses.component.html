@@ -1,0 +1,61 @@
+<div class="container-fluid bg-light">
+    <div class="course-container">
+        <div *ngIf="send === true" class="alert alert-danger my-3" role="alert">
+            Curso eliminado correctamente
+        </div>
+        <div class="bg-white border shadow">
+            <h5 class="bg-header text-lightly ps-3 py-2 m-0 w-100">Cursos</h5>
+            <table class="table table-borderless">
+                <thead>
+                    <tr class="border-bottom border-bottom-3">
+                        <th class="text-center">Nombre</th>
+                        <th class="text-center">Descripcion</th>
+                        <th class="text-center">Tipo</th>
+                        <th class="text-center">Costo</th>
+                        <th class="text-center">Duracion</th>
+                        <th class="text-center">Autor</th>
+                        <th class="text-center">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let course of courses">
+                        <td class="col-2 text-center">{{ course.nombre }}</td>
+                        <td class="col-3 text-center">{{ course.descripcion }}</td>
+                        <td class="col-1 text-center">{{ course.tipo }}</td>
+                        <td class="col-1 text-center">${{ course.costo }}</td>
+                        <td class="col-1 text-center">{{ course.duracion }} horas</td>
+                        <td class="col-2 text-center">{{ course.autor }}</td>
+                        <td class="col-2 text-center">
+                            <button class="btn btn-outline-success me-2" (click)="searchCourse(course.id)">
+                                Editar
+                            </button>
+                            <button class="btn btn-outline-danger" (click)="id = course.id"
+                            data-bs-toggle="modal" data-bs-target="#modal">
+                                Borrar
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="modal" id="modal" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header bg-danger">
+                        <h5 class="modal-title text-white">Eliminar Curso</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>¿Esta seguro de eliminar el curso?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal"
+                        >Cancelar</button>
+                        <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal"
+                        (click)="deleteCourse()">Borrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
